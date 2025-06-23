@@ -29,3 +29,19 @@ const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
     }
 },10);
 document.addEventListener("keydown", jump);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gameOverScreen.style.display = "flex";
+} else if (pipePosition < 0 && gameStarted)
