@@ -1,6 +1,7 @@
 const mario = document.querySelector(".mario")
 const pipe = document.querySelector(".pipe")
-
+const nuvem = document.querySelector("nuvem")
+const st
 const jump = () => {
     mario.classList.add("jump");
 
