@@ -11,11 +11,13 @@
       <img src="./imagem/clouds.png" class="nuvem">
       <img src="./imagem/mario.gif" class="mario">
       <img src="./imagem/pipe.png" class="pipe">
-      <botton class="start" omclick="startGame()">iniciar</botton>
+      <button class="start" omclick="startGame()">iniciar</botton>
     </div>
 
-    <div class="game-over"><h1>Game over</h1><button onclick=""
+    <div class="score">pontuação: <span id="score">0</span></div>
 
+    <div class="game-over"><h1>Game Over</h1><button onclick="restartGame()">Reiniciar</button>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>  
