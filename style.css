@@ -118,3 +118,31 @@ button.start {
   60% {bottom: 180px;}
   100% {bottom: 0;}
 }
+
+.game-over {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 55%; /* mais pra baixo */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-over h1 {
+  color: red; /* cor vermelha */
+  font-size: 40px;
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.game-over button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
