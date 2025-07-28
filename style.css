@@ -94,7 +94,7 @@ button.start {
   left: 0;
 }
 
-game-over h1{
+.game-over h1{
   font-size: 3rem;
   color: red;
   text-align: center;
