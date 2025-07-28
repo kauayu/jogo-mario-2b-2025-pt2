@@ -5,8 +5,8 @@
  const gameOverScreen = document.querySelector(".game-over")
  const scoreElement = document.querySelector(".score")
 
- audioStart = new Audio("/sound/audio_theme.mp3");
- const gameOverSound = new Audio("./soud/audio_gameover.mp3");
+ audioStart = new Audio("./sound/audio_theme.mp3");
+ const gameOverSound = new Audio("./sound/audio_gameover.mp3");
 
  let gameStarted = false;
  let score = 0;
@@ -36,6 +36,10 @@
 const updateScore = () => {
     score += 1;
     scoreElement.textcontent = score;
+    const animationSpeed = 1.5/ (1 + score/500);
+    pipe.style.animation = `pipe-animation ${animationSpeed}s infinite linear`;
+}
+
 const loop = setInterval(() => {
 const pipePosition = pipe.offsetLeft;
 const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
@@ -51,10 +55,19 @@ const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
         mario.style.width = "75px";
         mario.style.marginLeft = "50px";
 
+        audioStart.pause();
+        gameOverSound.play();
+
         clearInterval(loop);
+        gameOverScreen.style.display = "flex";
+    } else if (pipePosition < 0 && gameStarted) {
+     updateScore();
+     pipe.style.left = '';     
     }
 },10);
+
 document.addEventListener("keydown", jump);
 
-gameOverScreen.style.display = "flex";
-} else if (pipePosition < 0 && gameStarted)
+const restartGame = () => {
+    window.location.reload();
+}
